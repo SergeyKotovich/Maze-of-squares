@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     private PlayerController _player;
     private Vector3 _targetPosition;
-    private float _stoppingDistance = 0.1f;
+    private float _stoppingDistance = 0.01f;
     private bool _isMoving ;
     private static readonly int Run = Animator.StringToHash("run");
 
@@ -24,23 +24,24 @@ public class PlayerController : MonoBehaviour
     private void PlayerMovement()
     {
         
-        if (!_isMoving)
-        {
-            return;
-        }
-        
-        
-        var distanceToDestination = Vector3.Distance(transform.position, _targetPosition);
-        if (distanceToDestination <_stoppingDistance)
-        {
-            _isMoving = false;
-            _animator.SetBool(Run, false);
+       if (!_isMoving)
+       {
+           return;
+       }
+       
+       var distanceToDestination = Vector3.Distance(transform.position, _targetPosition);
+       if (distanceToDestination <_stoppingDistance)
+       {
+           _isMoving = false;
+           _animator.SetBool(Run, false);
             
-        }
-        var step = Time.deltaTime * _speedMoving;
-        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, step);
-        transform.LookAt(_targetPosition);
-        _animator.SetBool(Run, true);
+       }
+       var step = Time.deltaTime * _speedMoving;
+       _player.transform.position = Vector3.MoveTowards(transform.position, _targetPosition, step);
+       _player.transform.LookAt(_targetPosition);
+       _animator.SetBool(Run, true);
+       
+        
         
     
         
