@@ -6,11 +6,18 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
+    [SerializeField] private Vector3 _openDoorPosition;
+    [SerializeField] private DoorController _doorPrefab;
+
+    public void SpawnDoor()
+    {
+       Instantiate(_doorPrefab);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            transform.DOLocalMove(new Vector3(7, -1, 0), 1);
+            transform.DOLocalMove(_openDoorPosition, 1);
         }
         
     }
