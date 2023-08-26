@@ -8,15 +8,14 @@ public class MousePositionController : MonoBehaviour
 
   private void Update()
   {
-    var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    if (Physics.Raycast(ray, out var hitInfo, _layer))
+    if (Input.GetMouseButtonDown(0))
     {
-      if (Input.GetMouseButtonDown(0))
+      var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+      if (Physics.Raycast(ray, out var hitInfo, _layer))
       {
-        Debug.Log("HER");
-        var targetPosition = hitInfo.point;
-        _playerController.StartMove(targetPosition);
-
+        var targetPosition =  hitInfo.point;
+          _playerController.StartMove(targetPosition);
+          Debug.Log(targetPosition);
       }
     }
 

@@ -5,19 +5,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerController _playerPrefab;
     [SerializeField] private float _speedMoving = 5f;
     [SerializeField] private Animator _animator;
+    private PlayerController _player;
     private Vector3 _targetPosition;
-    private float _stoppingDistance = 0.01f;
-    private bool _isMoving;
+    private float _stoppingDistance = 0.1f;
+    private bool _isMoving ;
     private static readonly int Run = Animator.StringToHash("run");
 
     public PlayerController SpawnPlayer()
     {
-       var player =  Instantiate(_playerPrefab);
-       return player;
+       _player =  Instantiate(_playerPrefab);
+       return _player;
     }
     private void Update()
     {
         PlayerMovement();
+        
     }
     private void PlayerMovement()
     {
@@ -26,6 +28,8 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        
+        
         var distanceToDestination = Vector3.Distance(transform.position, _targetPosition);
         if (distanceToDestination <_stoppingDistance)
         {
@@ -37,6 +41,8 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, step);
         transform.LookAt(_targetPosition);
         _animator.SetBool(Run, true);
+        
+    
         
     }
 

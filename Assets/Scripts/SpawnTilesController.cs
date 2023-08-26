@@ -36,48 +36,19 @@ public class SpawnTilesController : MonoBehaviour
         {
             for (var j = 0; j < array.GetLength(1); j++)
             {
-                switch (array[i, j])
+                var value = array[i, j];
+
+                if (value ==-1)
                 {
-                    case -1:
-                        continue;
-                    case 0:
-                    {
-                        var whiteTile = Instantiate(_listPrefabs[0], _parentRoot);
-                        whiteTile.transform.position = _grid.CellToWorld(new Vector3Int(i, 0, j));
-                        _listTiles.Add(whiteTile);
-                        break;
-                    }
-                    case 1:
-                    {
-                        var redTile = Instantiate(_listPrefabs[1], _parentRoot);
-                        redTile.transform.position = _grid.CellToWorld(new Vector3Int(i, 0, j));
-                        break;
-                    }
-                    case 2:
-                    {
-                        var greenTile = Instantiate(_listPrefabs[2], _parentRoot);
-                        greenTile.transform.position = _grid.CellToWorld(new Vector3Int(i, 0, j));
-                        break;
-                    }
-                    case 3:
-                    {
-                        var yellowTile = Instantiate(_listPrefabs[3], _parentRoot);
-                        yellowTile.transform.position = _grid.CellToWorld(new Vector3Int(i, 0, j));
-                        break;
-                    }
-                    case 4:
-                    {
-                        var blueTile = Instantiate(_listPrefabs[4], _parentRoot);
-                        blueTile.transform.position = _grid.CellToWorld(new Vector3Int(i, 0, j));
-                        break;
-                    }
-                    case 5:
-                    {
-                        var purpleTile = Instantiate(_listPrefabs[5], _parentRoot);
-                        purpleTile.transform.position = _grid.CellToWorld(new Vector3Int(i, 0, j));
-                        break;
-                    }
+                    continue;
                 }
+                var prefab = _listPrefabs[value];
+
+                
+                var tile = Instantiate(prefab);
+                tile.transform.position = _grid.CellToWorld(new Vector3Int(i, 0, j));
+                _listTiles.Add(tile);
+              
             }
         }
     }
