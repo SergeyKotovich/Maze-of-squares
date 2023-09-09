@@ -5,9 +5,9 @@ public class PlayerCamera : MonoBehaviour
 {
   [SerializeField] private Camera _playerCamera;
   [SerializeField] private Vector3 _offset;
-  private PlayerController _player;
+  private PlayerMovementController _player;
 
-  public void SetPlayerPosition(PlayerController player)
+  public void SetPlayerPosition(PlayerMovementController player)
   {
       _player = player;
     
@@ -20,6 +20,6 @@ public class PlayerCamera : MonoBehaviour
 
   private void TrackingPlayer()
   {
-      _playerCamera.transform.position = _player.transform.position + _offset;
+    _playerCamera.transform.position = _player.transform.position + _offset;
   }
 }

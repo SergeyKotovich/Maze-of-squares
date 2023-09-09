@@ -47,7 +47,7 @@ public class SpawnTilesController : MonoBehaviour
 
                 
                 var tile = Instantiate(prefab,_parentRoot);
-                tile.transform.position = _grid.CellToWorld(new Vector3Int(i, 0, j));
+                tile.transform.position = _grid.WorldToCell(new Vector3Int(i, 0, j));
                 _listTiles.Add(tile);
               
             }
