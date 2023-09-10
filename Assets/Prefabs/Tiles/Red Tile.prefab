@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3443274925702211046}
   - component: {fileID: 3541939566611068545}
   - component: {fileID: 6782030344320230023}
+  - component: {fileID: 2163876988432429662}
+  - component: {fileID: 4170824182075158049}
   m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
@@ -92,11 +94,36 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5542862101097707770}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.1, z: 1}
   m_Center: {x: 0, y: 0.45, z: 0}
+--- !u!114 &2163876988432429662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5542862101097707770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fc9b1d553dfeb4883da52ebc23f7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4170824182075158049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5542862101097707770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac5ba2e377545d4481dbc92689e417e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 1
 --- !u!1 &6186552305958158263
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +136,7 @@ GameObject:
   - component: {fileID: 4364921989393706638}
   - component: {fileID: 4053166270164921259}
   - component: {fileID: 2483825830041429681}
-  - component: {fileID: 5291227895502067331}
+  - component: {fileID: -3599454946409226134}
   m_Layer: 0
   m_Name: Red Tile
   m_TagString: Untagged
@@ -196,7 +223,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5291227895502067331
+--- !u!114 &-3599454946409226134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,3 +235,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac5ba2e377545d4481dbc92689e417e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Id>k__BackingField: 0

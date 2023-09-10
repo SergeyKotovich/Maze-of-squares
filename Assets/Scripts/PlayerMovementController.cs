@@ -5,9 +5,7 @@ public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private float _speedMoving = 2f;
     
-    
     private Grid _grid;
-    
     private Vector3 _targetPosition = new(6, 0, 1);
     private PlayerMovementController _player;
     private Vector3 _startPosition = new(6, 0, 1);

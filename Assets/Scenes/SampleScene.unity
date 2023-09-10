@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d418db45b8e9a84a9e6e01dc366239e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefab: {fileID: 7523299046497246392, guid: 50d9ff054bd8e0e478e79c9829619e68, type: 3}
+  _playerPrefab: {fileID: 2204392285299881792, guid: 9c23208fd9e42cc44a011fa914152f38, type: 3}
 --- !u!1 &610881157
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCamera: {fileID: 963194227}
-  _offset: {x: 3, y: 3, z: 0}
+  _offset: {x: 3, y: 2.5, z: 0}
 --- !u!1 &2112124847
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +545,7 @@ MonoBehaviour:
   _playerCamera: {fileID: 963194229}
   _grid: {fileID: 610881159}
   _mousePositionController: {fileID: 2112124850}
+  characterTeleportationController: {fileID: 0}
 --- !u!4 &2112124849
 Transform:
   m_ObjectHideFlags: 0

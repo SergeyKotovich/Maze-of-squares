@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4364921989393706638}
   - component: {fileID: 4053166270164921259}
   - component: {fileID: 2483825830041429681}
-  - component: {fileID: 5642792211280183639}
+  - component: {fileID: -3866737906903886500}
   m_Layer: 0
   m_Name: White Tile
   m_TagString: Untagged
@@ -196,7 +196,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5642792211280183639
+--- !u!114 &-3866737906903886500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,3 +208,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac5ba2e377545d4481dbc92689e417e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Id>k__BackingField: 0

@@ -9,7 +9,7 @@ public class SpawnTilesController : MonoBehaviour
 
     [SerializeField] private Transform _parentRoot;
 
-    private List<Tile> _listTiles = new();
+    public List<Tile> ListTiles { get; } = new();
     
 // -1 - void
 // 0 - white
@@ -48,7 +48,7 @@ public class SpawnTilesController : MonoBehaviour
                 
                 var tile = Instantiate(prefab,_parentRoot);
                 tile.transform.position = _grid.WorldToCell(new Vector3Int(i, 0, j));
-                _listTiles.Add(tile);
+                ListTiles.Add(tile);
               
             }
         }

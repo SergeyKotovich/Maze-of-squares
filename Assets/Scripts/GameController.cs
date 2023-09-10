@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private PlayerCamera _playerCamera;
     [SerializeField] private Grid _grid;
     [SerializeField] private MousePositionController _mousePositionController;
+    [SerializeField] private CharacterTeleportationController characterTeleportationController;
    
 
 
@@ -21,7 +22,9 @@ public class GameController : MonoBehaviour
         player.Initialize(player,  _grid);
         _playerCamera.SetPlayerPosition(player);
         _mousePositionController.GetPlayerPosition(player);
-       
+        var listTiles = _spawnTilesController.ListTiles;
+        characterTeleportationController.Initialize(listTiles);
+
 
 
     }
