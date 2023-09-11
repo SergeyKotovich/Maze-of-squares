@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerAnimationController : MonoBehaviour
+public class PlayerMovementAnimationController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     private static readonly int Run = Animator.StringToHash("run");

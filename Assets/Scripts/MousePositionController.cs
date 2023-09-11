@@ -15,10 +15,7 @@ public class MousePositionController : MonoBehaviour
                 var targetPosition = hitInfo.point;
                 _player.GetTargetPoint(targetPosition);
             }
-           
-            
         }
-        
     }
 
     public void GetPlayerPosition(PlayerMovementController player)

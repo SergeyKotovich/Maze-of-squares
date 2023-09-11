@@ -19,11 +19,11 @@ public class GameController : MonoBehaviour
         _spawnTilesController.SpawnTiles();
         _doorController.SpawnDoor();
         var player = _playerSpawnController.SpawnPlayer();
-        player.Initialize(player,  _grid);
+        player.Initialize(player,  _grid , characterTeleportationController);
         _playerCamera.SetPlayerPosition(player);
         _mousePositionController.GetPlayerPosition(player);
         var listTiles = _spawnTilesController.ListTiles;
-        characterTeleportationController.Initialize(listTiles);
+        characterTeleportationController.Initialize(listTiles, player);
 
 
 

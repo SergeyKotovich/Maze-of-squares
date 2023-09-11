@@ -49,7 +49,7 @@
      <Compile Include="Assets\Scripts\MousePositionController.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawnController.cs" />
      <Compile Include="Assets\Scripts\DoorController.cs" />
-     <Compile Include="Assets\Scripts\PlayerAnimationController.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovementAnimationController.cs" />
      <Compile Include="Assets\Scripts\CharacterTeleportationController.cs" />
      <Compile Include="Assets\Scripts\SpawnTilesController.cs" />
      <Compile Include="Assets\Scripts\CenterOfMassCharacter.cs" />

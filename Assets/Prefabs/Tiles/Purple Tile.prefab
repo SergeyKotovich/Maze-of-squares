@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3541939566611068545}
   - component: {fileID: 5325718160196512750}
   - component: {fileID: 2994083683058035022}
-  - component: {fileID: 7102871625086333976}
   m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
@@ -94,7 +93,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5542862101097707770}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.1, z: 1}
@@ -111,19 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fc9b1d553dfeb4883da52ebc23f7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7102871625086333976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5542862101097707770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ac5ba2e377545d4481dbc92689e417e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Id>k__BackingField: 5
 --- !u!1 &6186552305958158263
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +122,7 @@ GameObject:
   - component: {fileID: 4364921989393706638}
   - component: {fileID: 4053166270164921259}
   - component: {fileID: 2483825830041429681}
-  - component: {fileID: -1971271368113120460}
+  - component: {fileID: 5802593641480770669}
   m_Layer: 0
   m_Name: Purple Tile
   m_TagString: Untagged
@@ -218,12 +204,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6186552305958158263}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1971271368113120460
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0.51, z: 0}
+--- !u!114 &5802593641480770669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,4 +221,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac5ba2e377545d4481dbc92689e417e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 0
+  <Id>k__BackingField: 5

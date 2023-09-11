@@ -5,23 +5,27 @@ using UnityEngine;
 public class CharacterTeleportationController : MonoBehaviour
 {
     private List<Tile> _listTiles;
-    public void Initialize(List<Tile> listTiles)
+    private PlayerMovementController _player;
+    public Action <Vector3> OnPlayerSwapPosition;
+    public void Initialize(List<Tile> listTiles, PlayerMovementController player)
     {
         _listTiles = listTiles;
+        _player = player;
         for (var i = 0; i < _listTiles.Count; i++)
         {
             _listTiles[i].OnPlayerTrigger += SwapPlayerPosition;
         }
     }
 
-    private void SwapPlayerPosition(int id, Vector3 positionPlayer)
+    private void SwapPlayerPosition(int id, Vector3 positionPlayer, Transform tilePosition)
     {
         for (var i = 0; i < _listTiles.Count; i++)
         {
-            if (id == _listTiles[i].Id)
+            if (id == _listTiles[i].Id && tilePosition != _listTiles[i].transform)
             {
                var positionForSwap = _listTiles[i].transform.position;
-               positionPlayer = positionForSwap;
+               _player.transform.position = positionForSwap;
+               OnPlayerSwapPosition?.Invoke(positionForSwap);
 
             }
         }
