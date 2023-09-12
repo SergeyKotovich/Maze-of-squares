@@ -16,6 +16,7 @@ public class PlayerMovementController : MonoBehaviour
     
     
     
+    
     public void Initialize( PlayerMovementController player , Grid grid , CharacterTeleportationController characterTeleportationController)
     {
         _grid = grid;
@@ -24,7 +25,7 @@ public class PlayerMovementController : MonoBehaviour
         
         _player.transform.position = _grid.WorldToCell(_targetPosition);
         var playerAnimationController = _player.GetComponentInChildren<PlayerMovementAnimationController>();
-        playerAnimationController.Initialize(this);
+        playerAnimationController.Initialize(this , _characterTeleportationController);
         _characterTeleportationController.OnPlayerSwapPosition += GetTargetPoint;
     }
     
@@ -48,6 +49,7 @@ public class PlayerMovementController : MonoBehaviour
        else
        {
            CharacterHasFinishedMovement?.Invoke();
+         //  
        }
     }
 

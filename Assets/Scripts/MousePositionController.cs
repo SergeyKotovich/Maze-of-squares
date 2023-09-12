@@ -7,15 +7,19 @@ public class MousePositionController : MonoBehaviour
     private PlayerMovementController _player;
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (!Input.GetMouseButtonDown(0))
         {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out var hitInfo, _layer))
-            {
-                var targetPosition = hitInfo.point;
-                _player.GetTargetPoint(targetPosition);
-            }
+            return;
         }
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (!Physics.Raycast(ray, out var hitInfo, 50f, _layer))
+        {
+            return;
+        }
+        var targetPosition = hitInfo.point;
+        Debug.Log(hitInfo.collider.gameObject.name);
+        Debug.Log(hitInfo.point);
+        _player.GetTargetPoint(targetPosition);
     }
 
     public void GetPlayerPosition(PlayerMovementController player)

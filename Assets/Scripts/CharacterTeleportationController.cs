@@ -7,6 +7,7 @@ public class CharacterTeleportationController : MonoBehaviour
     private List<Tile> _listTiles;
     private PlayerMovementController _player;
     public Action <Vector3> OnPlayerSwapPosition;
+    public Action CharacterStartedMovingDown;
     public void Initialize(List<Tile> listTiles, PlayerMovementController player)
     {
         _listTiles = listTiles;
@@ -19,13 +20,19 @@ public class CharacterTeleportationController : MonoBehaviour
 
     private void SwapPlayerPosition(int id, Vector3 positionPlayer, Transform tilePosition)
     {
+        var lowerPositionCharacter = _player.transform.position;
+        lowerPositionCharacter.y = -1f;
+        CharacterStartedMovingDown?.Invoke();
         for (var i = 0; i < _listTiles.Count; i++)
         {
             if (id == _listTiles[i].Id && tilePosition != _listTiles[i].transform)
             {
-               var positionForSwap = _listTiles[i].transform.position;
-               _player.transform.position = positionForSwap;
-               OnPlayerSwapPosition?.Invoke(positionForSwap);
+                var positionForSwap = _listTiles[i].transform.position;
+                var topPositionCharacter = positionForSwap;
+                positionForSwap.y = 0f;
+                 _player.transform.position = positionForSwap;
+                   OnPlayerSwapPosition?.Invoke(positionForSwap);
+               
 
             }
         }
